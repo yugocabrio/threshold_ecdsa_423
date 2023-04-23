@@ -21,14 +21,14 @@ signAndVerifyButton.addEventListener("click", async (e) => {
   button.setAttribute("disabled", true);
 
   // Reset result
-  document.getElementById("signature").innerText = "Signature: ";
-  document.getElementById("verification").innerText = "Result: ";
+  document.getElementById("signature").innerText = "";
+  document.getElementById("verification").innerText = "";
 
   // Sign the message
   const signatureResult = await tecdsa_practice423_backend.sign(message);
   if (signatureResult.Ok) {
     const signature = signatureResult.Ok.signature_hex;
-    document.getElementById("signature").innerText = `Signature: ${signature}`;
+    document.getElementById("signature").innerText = signature;
   } else {
     console.error("Error signing message:", signatureResult.Err);
     button.removeAttribute("disabled");
@@ -37,7 +37,7 @@ signAndVerifyButton.addEventListener("click", async (e) => {
 
   // Verify the signature
   const publicKey = document.getElementById("publicKey").innerText.split(" ")[2];
-  const signature = document.getElementById("signature").innerText.split(" ")[1];
+  const signature = document.getElementById("signature").innerText;
   const verificationResult = await tecdsa_practice423_backend.verify(
     signature,
     message,
@@ -45,7 +45,7 @@ signAndVerifyButton.addEventListener("click", async (e) => {
   );
   if (verificationResult.Ok) {
     const isValid = verificationResult.Ok.is_signature_valid;
-    document.getElementById("verification").innerText += `Signature is ${
+    document.getElementById("verification").innerText = `Signature is ${
       isValid ? "valid" : "invalid"
     }`;
   } else {

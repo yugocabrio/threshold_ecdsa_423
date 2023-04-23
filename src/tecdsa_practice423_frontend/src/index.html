@@ -8,20 +8,34 @@
     <script type="module" src="./index.js"></script>
 </head>
 <body>
-    <h1>Threshold Signature Demo</h1>
-    <div>
+  <div class="container">
+    <h1>Threshold ECDSA Signature Demo</h1>
+    <div class="text-center">
         <button id="getPublicKey">Get Public Key</button>
-        <p id="publicKey">Public Key: </p>
     </div>
+    <br>
+    <br>
+    <div id="publicKey" class="result-value text-center"></div>
     <br>
     <div>
         <label for="message">Message:</label>
         <input type="text" id="message" name="message" required>
         <button id="signAndVerify">Sign and Verify</button>
     </div>
-    <div>
-        <p id="signature">Signature: </p>
-        <p id="verification">Result: </p>
+    <br>
+    <br>
+    <div class="text-center">
+        <div class="result-label">Signature:</div>
+        <br>
+        <br>
+        <div id="signature" class="result-value text-center"></div>
+        <br>
+        <br>
+        <div class="result-label">Result:</div>
+        <br>
+        <br>  
+        <div id="verification" class="result-value text-center"></div>
     </div>
+  </div>
 </body>
 </html>
