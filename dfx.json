@@ -1,0 +1,29 @@
+{
+  "canisters": {
+    "tecdsa_practice423_backend": {
+      "candid": "src/tecdsa_practice423_backend/tecdsa_practice423_backend.did",
+      "package": "tecdsa_practice423_backend",
+      "type": "rust"
+    },
+    "tecdsa_practice423_frontend": {
+      "dependencies": [
+        "tecdsa_practice423_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/tecdsa_practice423_frontend/src/index.html"
+      },
+      "source": [
+        "src/tecdsa_practice423_frontend/assets",
+        "dist/tecdsa_practice423_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "version": 1
+}
