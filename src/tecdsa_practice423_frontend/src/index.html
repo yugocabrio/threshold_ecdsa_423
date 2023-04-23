@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>tecdsa_practice423</title>
-    <base href="/" />
-    <link rel="icon" href="favicon.ico" />
-    <link type="text/css" rel="stylesheet" href="main.css" />
-  </head>
-  <body>
-    <main>
-      <img src="logo2.svg" alt="DFINITY logo" />
-      <br />
-      <br />
-      <form action="#">
-        <label for="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
-      </form>
-      <section id="greeting"></section>
-    </main>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threshold ECDSA Signature Demo</title>
+    <link rel="stylesheet" href="main.css">
+    <script type="module" src="./index.js"></script>
+</head>
+<body>
+    <h1>Threshold Signature Demo</h1>
+    <div>
+        <button id="getPublicKey">Get Public Key</button>
+        <p id="publicKey">Public Key: </p>
+    </div>
+    <br>
+    <div>
+        <label for="message">Message:</label>
+        <input type="text" id="message" name="message" required>
+        <button id="signAndVerify">Sign and Verify</button>
+    </div>
+    <div>
+        <p id="signature">Signature: </p>
+        <p id="verification">Result: </p>
+    </div>
+</body>
 </html>
